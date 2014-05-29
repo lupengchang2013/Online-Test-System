@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+ "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="gb2312"></constant>
+	<package name="struts2" extends="struts-default">
+ 		<action name="login" class="com.sanqing.action.LoginAction">
+ 			<result name="studentSuccess" type="chain">getRandomSubject</result>
+ 			<result name="teacherSuccess" type="redirect">/teacher/index.html</result>
+ 			<result name="input">/login.jsp</result>
+ 		</action>
+ 		<action name="subjectAdd" class="com.sanqing.action.SubjectAddAction">
+ 			<result name="success" type="redirect">/teacher/subjectAdd.jsp</result>
+ 			<result name="input">/teacher/subjectAdd.jsp</result>
+ 		</action>
+ 		<action name="subjectQuery" class="com.sanqing.action.QuerySubjectAction">
+ 			<result name="success">/teacher/subjectManage.jsp</result>
+ 		</action>
+ 		<action name="subjectParticular" class="com.sanqing.action.SubjectParticularAction">
+ 			<result name="success">/teacher/subjectShow.jsp</result>
+ 		</action>
+ 		<action name="subjectUpadateBefore" class="com.sanqing.action.SubjectUpdateBefore">
+ 			<result name="success">/teacher/subjectUpdate.jsp</result>
+ 		</action>
+ 		<action name="subjectUpadate" class="com.sanqing.action.SubjectUpdateAction">
+ 			<result name="success">/teacher/subjectUpdate.jsp</result>
+ 		</action>
+ 		<action name="subjectLikeQuery" class="com.sanqing.action.LikeQuerySubjectAction">
+ 			<result name="success">/teacher/subjectManage.jsp</result>
+ 		</action>
+ 		<action name="getRandomSubject" class="com.sanqing.action.GetRandomSubject">
+ 			<result name="success">/student/index.jsp</result>
+ 		</action>
+ 		<action name="submitExam" class="com.sanqing.action.SubmitExamAction">
+ 			<result name="success">/student/examResult.jsp</result>
+ 		</action>
+ 		<action name="showSubjectAnswer" class="com.sanqing.action.ShowSubjectAnswer">
+ 			<result name="success">/student/showAnswer.jsp</result>
+ 		</action>
+ 		<action name="queryStudentByName" class="com.sanqing.action.QueryStudentByName">
+ 			<result name="success">/teacher/studentManage.jsp</result>
+ 		</action>
+ 		<action name="queryStudentByClass" class="com.sanqing.action.QueryStudentByClass">
+ 			<result name="success">/teacher/studentManage.jsp</result>
+ 		</action>
+ 	</package>	
+</struts>
